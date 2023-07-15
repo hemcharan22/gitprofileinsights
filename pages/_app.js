@@ -4,10 +4,10 @@ import { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '../style';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getStaticProps({ Component, ctx }) {
     let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+    if (Component.getStaticProps) {
+      pageProps = await Component.getStaticProps(ctx);
     }
     // exposes the query to the user
     pageProps.query = ctx.query;
